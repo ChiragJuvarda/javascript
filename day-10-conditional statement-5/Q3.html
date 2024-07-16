@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Traffic Light</h1>
+        <hr>
+<br><br>
+        <select name="" id="day" style="font-size: 30px;">
+            <option value="red">red</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+            <option value="lightColor">lightColor</option>
+           
+    
+        </select>
+        <button onclick="week()" style="font-size: 30px;">week day</button>
+        <br><br><br>
+        <hr>
+        <h1 id="ans" style="font-size: 100px;">color</h1>
+    
+
+
+
+    </center>
+
+
+</body>
+
+</html>
+<script>
+    function week(){
+        let a = document.getElementById("day").value
+
+switch (a) {
+    case "red": document.getElementById("ans").innerHTML = a+" Stop!"
+        break;
+    case "yellow": document.getElementById("ans").innerHTML =a+" Slow down!"
+        break;
+    case "green": document.getElementById("ans").innerHTML =a+" Go."
+        break;
+    case "lightColor": document.getElementById("ans").innerHTML =a+" Go."
+        break;
+    
+}
+
+
+    }
+
+    
+
+</script>

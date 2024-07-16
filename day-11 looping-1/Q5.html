@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <label for="">ENTER THE STRING</label><br>
+        <input type="text" id="in1">
+    <h3 id="ans"></h3>
+    <h3 id="ans2"></h3>
+
+    <button onclick="sad()">click</button>
+    </center>
+</body>
+</html>
+
+<script>
+function sad(){
+    let str = document.getElementById("in1").value
+
+    let res= 0
+    for(let i=0 ; i<str.length ; i++) {
+
+        
+
+        if(str[i]==='a'|| str[i]==='e'|| str[i]==='i'|| str[i]==='o'|| str[i]==='u' ||  
+      str[i]==='A'|| str[i]==='E'|| str[i]==='I'|| str[i]==='O'|| str[i]==='U'){
+            
+        }
+        else{
+            res+=1
+    document.getElementById("ans2").innerHTML += str[i]
+
+        }
+
+    }
+
+    document.getElementById("ans").innerHTML += res
+
+
+}
+    
+</script>

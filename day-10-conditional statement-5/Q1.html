@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Choose a Day</h1>
+        <hr>
+<br><br>
+        <select name="" id="day" style="font-size: 30px;">
+            <option value="sunday">sunday</option>
+            <option value="monday">monday</option>
+            <option value="tuesday">tuesday</option>
+            <option value="wednesday">wednesday</option>
+            <option value="thursday">thursday</option>
+            <option value="friday">friday</option>
+            <option value="saturday">saturday</option>
+    
+        </select>
+        <button onclick="week()" style="font-size: 30px;">week day</button>
+        <br><br><br>
+        <hr>
+        <h1 id="ans" style="font-size: 100px;">day</h1>
+    
+
+
+
+    </center>
+
+
+</body>
+
+</html>
+<script>
+    function week(){
+        let a = document.getElementById("day").value
+
+switch (a) {
+    case "sunday": document.getElementById("ans").innerHTML = a+" its weekend!"
+        break;
+    case "monday": document.getElementById("ans").innerHTML =a+" it's the start of the workweek."
+        break;
+    case "tuesday": document.getElementById("ans").innerHTML =a+" it's some other day."
+        break;
+    case "wednesday": document.getElementById("ans").innerHTML =a+" it's some other day."
+        break;
+    case "thursday": document.getElementById("ans").innerHTML =a+" it's some other day."
+        break;
+    case "friday": document.getElementById("ans").innerHTML =a+" it's almost the weekend!"
+        break;
+    case "saturday": document.getElementById("ans").innerHTML =a+" its weekend!"
+        break
+}
+
+
+    }
+
+    
+
+</script>

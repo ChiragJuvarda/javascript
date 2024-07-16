@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let a ={
+        name : "aashish",
+        age : 19,
+        ocupastion: "Full stack devloper"
+
+    }
+    for(key in a){
+        console.log(key)
+    }
+
+
+    let car ={
+        name : "tata",
+        modal : "harrier",
+        milage : "25"
+
+    }
+    for(key in car){
+        console.log(car[key])
+    }
+
+    let book ={
+        name : "jjk",
+        pages : "500",
+       price : "$200"
+
+    }
+    book.pages = "100"
+    for(key in book){
+        console.log(book[key])
+    }
+
+    let user ={
+        name : "aasshish jadav",
+        email : "aashishjaddav0959@gmail.com",
+       password : "aashish123"
+
+    }
+   delete user.password
+    for(key in user){
+        console.log(user[key])
+    }
+
+
+    let leptop ={
+        company: "HP",
+        model:5550
+     
+    }
+    function aashish() {
+            leptop.price = 125000
+            console.log(leptop)
+
+        }
+
+        aashish()
+  
+  let student = {
+    name : "aashish jadav",
+    grid : "5136",
+    greet : function (a){
+        console.log(a+"Have a nice day!")
+    }
+
+
+  }
+  student.greet("aashish ")
+  delete student.greet
+  console.log(student)
+
+</script>

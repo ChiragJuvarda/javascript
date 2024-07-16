@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="submit_form.php" method="POST" id="signup">
+            <h2>Registration Form</h2>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+
+            <button type="submit">Register</button>
+            <br><br><br><br><br>
+
+            <h1 id="err"></h1>
+
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+    document.getElementById("signup").onsubmit = function (event) {
+        document.getElementById("err").innerHTML = ""
+        event.preventDefault()
+        try {
+            let name1 = document.getElementById("name").value
+            let password1 = document.getElementById("email").value
+
+
+            if (name1 === "" || /\d/.test(name)) {
+                throw new Error("Please enter name")
+
+
+            }
+            if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+                throw new Error("Please enter velid email")
+
+
+            }
+
+            if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password) === false) {
+
+                throw new Error("enter 8 characters valied password")
+            }
+            if (Confirm_password !== password) {
+                throw new Error("password not match")
+
+
+            }
+        }
+
+        catch (err) {
+            document.getElementById("err").innerHTML = err.message
+            document.getElementById("err").style.color = "red"
+        }
+    }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    class person {
+        name = "aashish jadav"
+        age = 19
+        occupation = "Software Developer"
+        getname(name){
+            return name;
+        }
+        getage(age){
+            return age;
+        }
+        getoccupation(occupation){
+            return occupation;
+        }
+    }
+
+    let Person = new person();
+    console.log(Person.getname(Person.name))
+    console.log(Person.getage(Person.age))
+    console.log(Person.getoccupation(Person.occupation))
+
+
+    class car {
+        color = "black"
+        prich = 79 
+        name = "mustang Gt"
+
+        getcolor(color){
+            return color
+        }
+        getprich(prich){
+            return prich
+        }
+        getname(name){
+            return name
+        }
+    }
+
+    let Car = new car();
+
+    console.log(Car.getcolor(Car.color))
+    console.log(Car.getprich(Car.prich))
+    console.log(Car.getname(Car.name))
+    
+
+    class Calculator {
+        sum(a,b){
+            return "sum =" , a+b;
+        }
+        sub(a,b){
+            return "sub =" , a-b;
+        }
+    }
+    let calculator = new Calculator();
+
+    console.log(calculator.sum(10,5))
+    console.log(calculator.sub(10,5))
+</script>

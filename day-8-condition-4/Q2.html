@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Bill Calculator</title>
+  <style>
+    input[type="number"] {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CJ's Restaurant</h1>
+  <form id="billForm">
+    <label for="item1">Pizza Price:</label>
+    <input type="number" id="item1" name="item1"><br><br>
+    <label for="item2">Burger Price:</label>
+    <input type="number" id="item2" name="item2"><br><br>
+    <label for="item3">Sweet Price:</label>
+    <input type="number" id="item3" name="item3"><br><br>
+    <button type="button" onclick="calculateTotal()">Calculate Total</button>
+  </form>
+  <br>
+  <div id="total"></div>
+
+  <script>
+    function calculateTotal() {
+      var item1Price = parseFloat(document.getElementById('item1').value) || 0;
+      var item2Price = parseFloat(document.getElementById('item2').value) || 0;
+      var item3Price = parseFloat(document.getElementById('item3').value) || 0;
+
+      var total = item1Price + item2Price + item3Price;
+
+      document.getElementById('total').innerHTML = "Total Bill: ₹" + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>

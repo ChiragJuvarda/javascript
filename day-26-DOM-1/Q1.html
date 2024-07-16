@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 class="a1">red and white red</h1>
+    <button onclick="chgcolor()">change color red</button>
+    <button onclick="chgcolorb()">change color black</button>
+    <h3 class="a1">red and white  green</h3>
+    <button onclick="chgcolorg()">change color green</button>
+    <button onclick="chgcolorb1()">change color black</button>
+    <h5 class="a1">red and white   blue</h5>
+    <button onclick="chgcolorblue()">change color blue</button>
+    <button onclick="chgcolorb2()">change color black</button>
+
+
+    <br><br>
+    <button onclick="allcolor()">all color chenaj  green</button>
+    <button onclick="allcolor1()">all color chenaj  blue</button>
+    <button onclick="allcolor2()">all color chenaj   red</button>
+</body>
+</html>
+
+
+<script>
+    function chgcolor() {
+        document.querySelector("h1").style.color = "red"
+    }
+    function chgcolorb() {
+        document.querySelector("h1").style.color = "black"
+    }
+    function chgcolorg() {
+        document.querySelector("h3").style.color = " green"
+    }
+    function chgcolorb1() {
+        document.querySelector("h3").style.color = "black"
+    }
+    function chgcolorblue() {
+        document.querySelector("h5").style.color = " blue"
+    }
+    function chgcolorb2() {
+        document.querySelector("h5").style.color = "black"
+    }
+
+
+
+    function allcolor() {
+        let heading = document.querySelectorAll(".a1")
+       
+        for (let i= 0; i< heading.length;i++) {
+           heading[i].style.color = "green"
+           heading[i].style.backgroundcolor = "black"
+            
+
+        }
+
+
+    }
+
+    function allcolor1() {
+        let heading = document.querySelectorAll(".a1")
+       
+        for (let i= 0; i< heading.length;i++) {
+           heading[i].style.color = "blue"
+           heading[i].style.backgroundcolor = "black"
+            
+
+        }
+
+
+    }
+    function allcolor2() {
+        let heading = document.querySelectorAll(".a1")
+       
+        for (let i= 0; i< heading.length;i++) {
+           heading[i].style.color = "red"
+           heading[i].style.backgroundcolor = "black"
+            
+
+        }
+
+
+    }
+    
+
+</script>

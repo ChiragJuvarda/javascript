@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Food{
+        cook(){
+            throw new Error ("cook() is not implemented")
+        }
+    }
+    class Pizza extends Food{
+        cook(){
+            console.log("Preparing dough, adding sauce and toppings, baking in oven.");
+        }
+    }
+    class Sushi extends Food{
+        cook(){
+            console.log("Preparing vinegared rice, selecting fresh fish and vegetables, rolling and slicing.")
+        }
+    }
+    class Burger extends Food{
+        cook(){
+            console.log("Grilling patty, assembling with bun, vegetables, and condiments.")
+        }
+    }
+    const pizza = new Pizza();
+    const sushi = new Sushi();
+    const burger = new Burger();
+    pizza.cook();
+    sushi.cook();
+    burger.cook();
+</script>
+

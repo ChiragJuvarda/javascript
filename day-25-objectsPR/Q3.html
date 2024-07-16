@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let book = [
+    { title: "chainshow man", author: "Tsugu", category: "education",price:80 },
+        { title: "jujutsu kaisen", author: "Gege Akutami", category: "anime",price:90 },
+        { title: "shinchan", author: "Yoshito Usui", category: "cartoon",price:50 },
+        { title: "death_note", author: "Tsugumi Ohba", category: "education",price:120 }
+
+
+    ]
+
+    let ans = book.filter((el)=>{
+        return el.price < 60
+    }).map((el)=>{
+        return el 
+    })
+    console.log(ans)
+
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center> <h1 style="font-size: 80px;">Positive, Negative, or Zero</h1></center>
+
+    <center><h2>enter the value </h2></center>
+    <center><input type="text" id="in1"></center>
+
+
+    <center><h1 id="ans" style="font-size: 50px;"></h1></center>
+    
+</body>
+</html>
+<script>
+    let  A= document.getElementById("in1").value
+
+    if(A === ""){
+        document.getElementById("ans").innerHTML = "Positive, Negative, or Zero"
+    }
+    else{
+        if(A == 0 ){
+            document.getElementById("ans").innerHTML = "ZERO"
+
+        }
+        else if(A > 0){
+            document.getElementById("ans").innerHTML = "Positive."
+           
+        }
+    
+     
+        else{
+            document.getElementById("ans").innerHTML = "Negative"
+        }
+    
+    }
+</script>

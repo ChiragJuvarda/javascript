@@ -1,0 +1,62 @@
+Belgium Chocolate Frappuccino 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Starbucks menu.</h1>
+        <hr>
+<br><br>
+        <select name="" id="day" style="font-size: 30px;">
+            <option value="Belgium Chocolate Frappuccino    ">Belgium Chocolate Frappuccino </option>
+            <option value="Belgium Chocolate Latte">Belgium Chocolate Latte </option>
+            <option value="Iced Belgium Chocolate Latte">Iced Belgium Chocolate Latte</option>
+            <option value="Alphonso Mango Java Chip Frappuccino">Alphonso Mango Java Chip Frappuccino</option>
+            <option value="Cold Brew with Ginger Ale">Cold Brew with Ginger Ale </option>
+           
+    
+        </select>
+        <button onclick="week()" style="font-size: 30px;">week day</button>
+        <br><br><br>
+        <hr>
+        <h1 id="ans" style="font-size: 100px;">Starbucks menu.  enter your coffy</h1>
+    
+
+
+
+    </center>
+
+
+</body>
+
+</html>
+<script>
+    function week(){
+        let a = document.getElementById("day").value
+
+switch (a) {
+    case "Belgium Chocolate Frappuccino": document.getElementById("ans").innerHTML = a+" ₹ 580.89"
+        break;
+    case "Belgium Chocolate Latte": document.getElementById("ans").innerHTML =a+" ₹ 978.21"
+        break;
+    case "Iced Belgium Chocolate Latte": document.getElementById("ans").innerHTML =a+" ₹ 789.25"
+        break;
+    case "Alphonso Mango Java Chip Frappuccino": document.getElementById("ans").innerHTML =a+" ₹ 879.23"
+        break;
+    case "Cold Brew with Ginger Ale": document.getElementById("ans").innerHTML =a+" ₹ 852.36"
+        break;
+    
+}
+
+
+    }
+
+    
+
+</script>

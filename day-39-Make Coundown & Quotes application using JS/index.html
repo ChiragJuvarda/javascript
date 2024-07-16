@@ -1,0 +1,136 @@
+<!-- Create a birthday countdown  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aquamarine;
+  }
+
+
+  h1 {
+    font-size: 80px;
+  }
+
+  img {
+    height: 280px;
+    width: 300px;
+    display: none;
+  }
+  .continer{
+        height: auto;
+        width: 100%;
+        border: 1px solid;
+    }
+    img{
+        width: 100%;
+        display: none;
+    }
+</style>
+
+<body>
+  <div>
+    <h1><span class="s1">11</span>
+      :<span class="s2">59</span>
+      :<span class="s3">00</span>
+    </h1>
+    <br>
+    <div class="continer">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/9384b37a848c5e60.jpg?q=20" alt="">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/354cde8026deab5a.jpg?q=20" alt="">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/ca7c68deddbda50e.jpg?q=20" alt="">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/bdd9bb733f1c0b71.jpg?q=20" alt="">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/1aaeb0a6531bef88.jpg?q=20" alt="">
+        <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/9e9aa250dfecdbc3.jpg?q=20" alt="">
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<script>
+    let s1=11
+
+    document.querySelector(".s1").innerHTML = s1
+  
+    let stop = setInterval(()=>{
+  
+      s1++
+  
+      if(s1 === 12){
+  clearInterval(stop)
+  document.querySelector(".s1").innerHTML = s1
+      }
+    },10000)
+  
+    let s2=59
+  document.querySelector(".s2").innerHTML = s2
+  
+    let stop2 = setInterval(()=>{
+  
+      s2++
+  
+      if(s2 === 60){
+  clearInterval(stop2)
+  document.querySelector(".s2").innerHTML = 0+"0"
+  
+      }
+    },10000)
+  
+  
+    let s3 = 50
+  document.querySelector(".s3").innerHTML = s3
+  
+    let stop3= setInterval(()=>{
+      s3++
+      document.querySelector(".s3").innerHTML = s3
+  
+    if(s3===60){
+      clearInterval(stop3)
+      document.querySelector(".s3").innerHTML = 0+"0"
+      document.querySelector("img").style.display="block"
+    }
+  
+    },1000)
+
+    let slider = document.querySelectorAll("img")
+    let index = 0
+    setTimeout(doSomething, 9500);
+    function doSomething() {
+    
+    function slid(index) {
+        
+        for (let i = 0; i < slider.length; i++) {
+            slider[i].style.display = "none"
+            document.querySelectorAll("img").style
+
+        }
+        slider[index].style.display = "block"
+
+    }
+
+    function show() {
+        setInterval(() => {
+            slid(index)
+            index++
+            if (index == slider.length) {
+                index = 0
+
+            }
+        }, 2500)
+    }
+    show()
+}
+
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styel.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <p>Fill out the form carefully for registration</p>
+    <form id="singup">
+      <div class="form-group">
+        <label for="first-name">Student Name</label>
+        <br>
+        <input type="text" id="a1" name="first_name" placeholder="First Name">
+        <input type="text" id="a1" name="last_name" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <br>
+        <select name="gender" id="gender">
+          <option value="">Please Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="email">Student E-mail</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="ex: myname@example.com">
+      </div>
+      <div class="form-group">
+        <label for="student-id">Student ID</label>
+        <br>
+        <input type="text" id="student-id" name="student_id">
+      </div>
+      <div class="form-group">
+        <label for="class">List of Classes</label>
+        <br>
+        <select name="class" id="class">
+          <option value="">Please Select</option>
+          <option value="c1">class-1</option>
+          <option value="c2">class-2</option>
+          <option value="c3">class-3</option>
+        </select>
+      </div>
+      <center>
+        <button type="submit">Submit</button>
+      </center>
+      <center>
+        <p id="output">
+
+        </p>
+      </center>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
+<script>
+  $(document).ready(function () {
+    $("#singup").submit(function () {
+      event.preventDefault()
+
+      $("#output").text("")
+
+      let name = $("#a1").val()
+      
+      let mail = $("#email").val()
+
+      let finalpassword = $("#student-id").val()
+
+      let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+      if (name === "") {
+        $("#output").text("Please enter name!")
+      }
+      if (finalpassword === "") {
+        $("#output").text("Please enter pass!")
+      }
+      else if (!regex.test(finalpassword)) {
+        $("#output").text("Please enter strong pass!")
+      }
+
+      else {
+        $("#output").text("Congratulation Form Submited !..")
+      }
+
+    })
+  })
+</script>

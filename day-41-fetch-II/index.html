@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 300px; /* Changed width to 300px */
+        border: 1px solid;
+        text-align: center;
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<body>
+    <div id="main"></div>
+</body>
+
+</html>
+
+<script>
+
+    fetch('https://fakestoreapi.com/products')
+
+        .then((res) => {
+            return res.json();
+        })
+        .then((json) => {
+            console.log(json)
+            fakestoreapi(json);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+        function fakestoreapi(json) {
+        json.forEach((el) => {
+            let div = document.createElement('div');
+            let heading = document.createElement('h3');
+            heading.innerHTML = el.title;
+
+            let img = document.createElement('img');
+            img.setAttribute("src", el.image);
+
+            let price = document.createElement('p');
+            price.innerHTML = "$" + el.price;
+
+            div.className = 'product';
+
+            div.append(heading, img, price);
+            document.getElementById("main").append(div);
+        });
+    }
+</script>

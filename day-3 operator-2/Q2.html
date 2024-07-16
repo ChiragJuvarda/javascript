@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> totle price : <samp id="ans"></samp></h1>
+    <h1 > totle price : <samp id="totle"></samp></h1>
+</body>
+</html>
+<script>
+    let a= prompt("P =")
+    let b= prompt("R =")
+
+    let c= prompt("T =")
+
+    let s = +a * +b * +c
+
+    document.getElementById("ans").innerHTML = s
+
+    let p = s/100
+
+    document.getElementById("totle").innerHTML = p
+
+
+</script>

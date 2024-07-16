@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ticket price</h1>
+
+    <h2>enter the value </h2>
+    <input type="text" id="in1">
+
+    <h1 id="ans"></h1>
+    
+</body>
+</html>
+<script>    
+    let age = document.getElementById("in1").value
+
+if(age === ""){
+    document.getElementById("ans").innerHTML = "enter the Grade"
+}
+else{
+    if(age >= 1 && age <= 12){
+        document.getElementById("ans").innerHTML = "total ticket  " +"5"
+    }
+    else if(age >=13 && age <=18){
+        document.getElementById("ans").innerHTML = "total ticket  " +"10"
+    }
+    else if(age >=19 && age <=60){
+        document.getElementById("ans").innerHTML = "total ticket  " +"20"
+    }
+    else{
+        document.getElementById("ans").innerHTML = "total ticket  " + "15"
+    }
+    
+    
+}
+
+</script>

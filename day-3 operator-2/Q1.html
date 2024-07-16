@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> totle subjects sum : <samp id="ans"></samp></h1>
+   
+    <h1>totle percentage : <samp id="totel"></samp></h1>
+    <h1 id="totle"></h1>
+    
+</body>
+</html>
+
+<script>
+    let a = prompt("maths marke =")
+    let b = prompt("hindi marke =")
+
+    let c = prompt("eco marke =")
+
+    let d = prompt("guj marke =")
+
+    let e = prompt("ss marke =")
+
+    let s =(+a + +b + +c + +d + +e)
+
+    document.getElementById("ans").innerHTML = s;
+
+    let totel = (s/500)* 100
+
+    document.getElementById("totle").innerHTML = totel
+
+</script>

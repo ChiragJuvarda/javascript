@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="ans"></h1>
+
+</body>
+
+</html>
+<script>
+
+    let arr = [1,2,3,4,5,6,7,8,9],sum=0
+     let ans = arr.filter((str) => {
+
+        if(str%2==1){
+            return sum += str
+        }
+           
+          
+         
+    },0)
+   
+    console.log(ans,sum);
+    document.getElementById("ans").innerHTML = ans+" <br> Total = "+sum
+
+
+
+</script>

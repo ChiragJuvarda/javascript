@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1 id="ans">
+        
+    </h1>
+   
+</body>
+</html>
+
+<script>
+
+
+let a = prompt("enter a string")
+
+
+for(let i=0;i<a.length;i++)
+{
+    
+
+    if(a[i] == "a" || a[i] == "e" || a[i] == "i" || a[i] == "o" || a[i] == "u"||a[i] == "A" || a[i] == "E" || a[i] == "I" || a[i] == "O" || a[i] == "U"){
+        console.log(a[i])
+        a.charAt(a[i])
+       let c= a[i]+"  is a vowel<br>"
+       //c.style.backgroundColor ="red"
+       let reg = c.fontcolor("green");
+       document.getElementById("ans").innerHTML +=reg
+    }
+    else{
+
+        console.log(a[i]+"  is not a vowel")
+        let c= a[i]+"  is not a vowel<br>"
+        let rog = c.fontcolor("red");
+        document.getElementById("ans").innerHTML+=rog
+    }
+}
+
+gsap.from("#ans",{
+    y:-250,
+    duration: 2,
+    delay:1,
+    opacity:0,
+   yoyo:true,
+   //repeat:1,
+   stagger: 2
+
+})
+
+
+</script>

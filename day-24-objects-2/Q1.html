@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+
+    let student = [
+        {name : "aashish" , roll : 7,marks :50 },
+        {name : "dev" , roll : 7,marks :70 },
+        {name : "kartik" , roll : 15,marks :45 },
+        {name : "khusal" , roll : 4,marks :80 },
+        {name : "aayush" , roll : 20,marks :90 },
+        {name : "khhan" , roll : 25,marks :30 }
+
+]
+
+// Q1. Return name of students with Capital Letters.
+
+for(let i=0; i<student.length;i++){
+    console.log(student[i].name.toUpperCase())
+}
+
+// Q2.Return details of students who scored more than 60.
+
+
+let ans1 = student.filter((el)=>{
+    return el.marks>60
+})
+console.log(ans1)
+
+
+// Q3 Return details of students who scored more than 60 and roll number greater than 15.
+
+
+
+let ans2 = student.filter((el)=>{
+    return el.marks>60 && el.roll>15
+})
+console.log(ans2)
+
+
+// Q4 Sum of marks of all students
+
+let ans3  = student.reduce((acc,curr)=>{
+    return acc + curr.marks
+},0)
+console.log(ans3)
+
+// Q5.Return only name of students who scored more than 60
+
+let ans4 = student.filter((el)=>{
+    return el.marks>60
+}).map((el) => {
+
+    return el.name
+})
+console.log(ans4)
+
+// Q6. Add 20 to each students marks.
+
+let ans5 = student.map((el)=>{
+    return el.marks + 20 
+})
+console.log(ans5)
+
+// Q7. Create an array of objects representing quotes. Each quote object contains `text`, `author`, and `category` properties.  If category is education show .
+
+let Categorize = [
+    { text: "chainshow man", author: "Tsugu", category: "education" },
+        { text: "jujutsu kaisen", author: "Gege Akutami", category: "anime" },
+        { text: "shinchan", author: "Yoshito Usui", category: "cartoon" },
+        { text: "death_note", author: "Tsugumi Ohba", category: "education" }
+
+
+
+    ]
+
+    let ans = Categorize.filter((el)=>{
+        return el.category === "education"
+    })
+    console.log(ans)
+
+</script>

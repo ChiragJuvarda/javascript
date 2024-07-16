@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Manrope;
+    }
+
+    .continer {
+        height: 200px;
+        width: 100%;
+        /* border: 1px solid; */
+        background-color: #02395A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 300px;
+    }
+
+    .main {
+        height: 180px;
+        width: 250px;
+        /* border: 1px solid; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #i1 {
+        color: white;
+        font-size: 40px;
+    }
+
+    #c1 {
+        font-size: 30px;
+        margin: 0 5px;
+        color: #fff;
+        /* font-weight: 40px; */
+    }
+
+    #c2 {
+        font-size: 30px;
+        margin: 0 5px;
+        color: #fff;
+        /* font-weight: 40px; */
+    }
+
+    #c3 {
+        font-size: 30px;
+        margin: 0 5px;
+        color: #fff;
+        /* font-weight: 40px; */
+    }
+
+    #c4 {
+        font-size: 30px;
+        margin: 0 5px;
+        color: #fff;
+        /* font-weight: 40px; */
+    }
+
+    #c5 {
+        font-size: 30px;
+        margin: 0 5px;
+        color: #fff;
+        /* font-weight: 40px; */
+    }
+
+    i {
+        font-size: 35px;
+        color: #fff;
+
+    }
+
+    h3 {
+
+        font-size: 18px;
+        color: #7997a9;
+        letter-spacing: .5px;
+        line-height: 20px;
+        margin-top: 5px;
+    }
+
+    img {
+        height: 40px;
+        width: 40px;
+    }
+</style>
+
+<body>
+    <div class="continer">
+        <div class="main">
+
+            <i class="fa-regular fa-user"></i><br>
+            <h1 id="c1"></h1>
+            <h3>Students Trained</h3>
+
+        </div>
+        <div class="main">
+            <i class="fa-regular fa-user"></i><br>
+            <h1 id="c2"></h1>
+            <h3>Approved Courses</h3>
+        </div>
+
+        <div class="main">
+            <i class="fa-solid fa-suitcase"></i><br>
+            <h1 id="c3"></h1>
+            <h3>Companies Tie-Ups</h3>
+        </div>
+
+        <div class="main">
+            <i class="fa-solid fa-building"></i><br>
+            <h1 id="c4"></h1>
+            <h3>Branches</h3>
+        </div>
+
+        <div class="main">
+            <img src="https://www.rnwmultimedia.edu.in/images/certificate.png" alt=""><br>
+            <h1 id="c5"></h1>
+            <h3>Certification</h3>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let index1 = 0
+    let stop1 = setInterval(() => {
+        index1 += 30
+        document.getElementById("c1").innerHTML = index1 + "\t\t+"
+
+        if (index1 === 37500) {
+            clearInterval(stop1)
+        }
+    })
+    let index2 = 0
+    let stop2 = setInterval(() => {
+        index2++
+        document.getElementById("c2").innerHTML = index2 + "\t\t+"
+        if (index2 === 50) {
+            clearInterval(stop2)
+        }
+    }, 100)
+
+    let index3 = 0
+    let stop3 = setInterval(() => {
+        index3 += 3
+        document.getElementById("c3").innerHTML = index3 + "\t\t+"
+        if (index3 === 1500) {
+            clearInterval(stop3)
+        }
+    })
+
+    let index4 = 0
+    let stop4 = setInterval(() => {
+        index4++
+        document.getElementById("c4").innerHTML = index4 + "\t\t+"
+        if (index4 === 22) {
+            clearInterval(stop4)
+        }
+    }, 100)
+
+
+    let index5 = 0
+    let stop5 = setInterval(() => {
+        index5++
+        document.getElementById("c5").innerHTML = index5
+        if (index5 === 8) {
+            clearInterval(stop5)
+        }
+    }, 100.0)
+
+</script>

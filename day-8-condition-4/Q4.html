@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>enter password</h1>
+    <input type="text" id="in1">
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+    let spass = "aashish@123"
+    let epass = document.getElementById("in1").value
+
+    if(epass === ""){
+        document.getElementById("ans").innerHTML = "envild number"
+    }
+    else{
+        if(spass == epass){
+            document.getElementById("ans").innerHTML = "logged in"
+        }
+        else{
+            document.getElementById("ans").innerHTML = "incoct passwored"
+        }
+    }
+</script>

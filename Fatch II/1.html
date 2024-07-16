@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .dog{
+        width: 500px;
+    }
+</style>
+<body>
+    <div class="main"></div>
+    
+</body>
+</html>
+<script>
+
+    fetch('https://dog.ceo/api/breeds/image/random')
+    .then((res)=>{
+        return res.json()
+    }).then((json)=>{
+        console.log(json)
+        dog(json)
+    }).catch((err)=>{
+        console.log(err);
+    })
+    function dog(json){
+        let img = document.createElement('img')
+        img.src = json.message
+        img.classList.add('dog')
+        document.querySelector('.main').appendChild(img)
+        
+    }
+
+</script>
