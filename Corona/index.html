@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Data Display</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeIQhCFrOjd878uDsyg8iaa54XhZEalJH08w&s);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        input, select {
+            width: 400px;
+            height: 50px;
+            border: none;
+            font-size: 17px;
+            border-bottom: 2px solid rgba(0,0,0, 0.12);
+            border-bottom: 2px solid #6e110a;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: transparent;
+        }
+        .main1 {
+            width: 100%;
+            padding-top: 30px;
+            margin-top: 200px;
+        }
+        .btn {
+            height: 45px;
+            width: 150px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+        }
+        #main div {
+            width: 100%;
+            color: white;
+        }
+        #m1 div {
+            margin-top: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            color: white;
+        }
+        #m1 div .p2 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .img1 {
+            height: 50px;
+            width: 50px;
+        }
+        .p2 {
+            width: 100%;
+        }
+        #stateSelect{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="main1" class="main1">
+        <select id="stateSelect">
+            <option value="">Select State</option>
+            <option value="AP">Andhra Pradesh (AP)</option>
+            <option value="AR">Arunachal Pradesh (AR)</option>
+            <option value="AS">Assam (AS)</option>
+            <option value="BR">Bihar (BR)</option>
+            <option value="CG">Chhattisgarh (CG)</option>
+            <option value="GA">Goa (GA)</option>
+            <option value="GJ">Gujarat (GJ)</option>
+            <option value="HR">Haryana (HR)</option>
+            <option value="HP">Himachal Pradesh (HP)</option>
+            <option value="JH">Jharkhand (JH)</option>
+            <option value="KA">Karnataka (KA)</option>
+            <option value="MH">Maharashtra (MH)</option>
+            <option value="MN">Manipur (MN)</option>
+            <option value="ML">Meghalaya (ML)</option>
+            <option value="OD">Odisha (OD)</option>
+            <option value="PB">Punjab (PB)</option>
+            <option value="RJ">Rajasthan (RJ)</option>
+            <option value="TN">Tamil Nadu (TN)</option>
+            <option value="IN">All India</option>
+        </select><br><br><br>
+        <input type="text" id="input" placeholder="Or Enter State For View Corona Details" onkeydown="handleKeyDown(event)"><br><br><br>
+        <button onclick="searchData()" class="btn">View</button>
+        <div id="m1"></div>
+        <div id="main"></div>
+    </div>
+    <script>
+        function handleKeyDown(event) {
+            if (event.key === "Enter") {
+                searchData();
+            }
+        }
+
+        function searchData() {
+            let input = document.getElementById("input").value.toUpperCase();
+            let select = document.getElementById("stateSelect").value;
+            let value = select !== "" ? select : input;
+
+            if (value === "") {
+                alert("Please select a state or enter a state name.");
+                return;
+            }
+
+            fetch('https://data.covid19india.org/v4/min/data.min.json')
+                .then(res => res.json())
+                .then(json => {
+                    console.clear();
+                    console.log(json);
+                    displayData(json, value);
+                })
+                .catch(err => {
+                    console.log("Error Fetching The Covid Data:", err);
+                });
+        }
+
+        function display() {
+            let div = document.createElement("div");
+            document.getElementById("m1").innerHTML = "";
+
+            let input = document.getElementById("input").value.toUpperCase();
+            let select = document.getElementById("stateSelect").value;
+            let value = select !== "" ? select : input;
+
+            let text = document.createElement("p");
+            text.innerHTML = "DATA OF " + value;
+            text.setAttribute("class", "p2");
+
+            div.append(text);
+            document.getElementById("m1").append(div);
+        }
+
+        function displayData(json, value) {
+            let div = document.createElement("div");
+            document.getElementById("main").innerHTML = "";
+
+            display();
+
+            let text = document.createElement("p");
+            text.innerHTML = "TESTED : " + (json[value]?.delta?.tested || "N/A")
+                            + "<br>Vaccinated1 : " + (json[value]?.delta?.vaccinated1 || "N/A")
+                            + "<br>Vaccinated2 : " + (json[value]?.delta?.vaccinated2 || "N/A");
+            text.setAttribute("class", "p2");
+
+            let text1 = document.createElement("p");
+            text1.innerHTML = "Population : " + (json[value]?.meta?.population || "N/A");
+            text1.setAttribute("class", "p2");
+
+            let text3 = document.createElement("p");
+            text3.innerHTML = "Confirmed (21-14 days) : " + (json[value]?.delta21_14?.confirmed || "N/A");
+            text3.setAttribute("class", "p2");
+
+            let text4 = document.createElement("p");
+            text4.innerHTML = "Confirmed (7 days) : " + (json[value]?.delta7?.confirmed || "N/A");
+            text4.setAttribute("class", "p2");
+
+            let text2 = document.createElement("p");
+            text2.innerHTML = "Total Vaccinated1 : " + (json[value]?.total?.vaccinated1 || "N/A")
+                            + "<br>Total Vaccinated2 : " + (json[value]?.total?.vaccinated2 || "N/A");
+            text2.setAttribute("class", "p2");
+
+            div.append(text, text1, text3, text4, text2);
+            document.getElementById("main").append(div);
+        }
+    </script>
+</body>
+</html>
